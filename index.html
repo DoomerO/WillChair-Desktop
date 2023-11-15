@@ -16,6 +16,7 @@
           navigator.serviceWorker.register('/serviceWorker.js').then((res) => {
             console.log("Worker Registred with succes!");
           }).catch((error) => {
+            console.log(error);
             console.log("Error in the service worker...")
           }) 
         })
