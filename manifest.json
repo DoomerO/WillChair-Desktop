@@ -1,5 +1,4 @@
 {
-    "manifest_version": 3,
     "name": "Willchair Accessibility App",
     "short_name": "Willchair",
     "start_url": "/",
@@ -31,11 +30,8 @@
             "purpose": "maskable"
         }
     ],
-    "background": {
-        "service_worker": "background.js"
-    },
-    "theme-color": "#F7F9FC",
+    "theme_color": "#F7F9FC",
     "background_color": "#F7F9FC",
     "display": "fullscreen",
-    "orientaion": "portrait"
+    "orientation": "portrait"
 }

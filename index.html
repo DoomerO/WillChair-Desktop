@@ -3,12 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./src/img/home/logoW.png" />
-    
+    <link rel="manifest" type="manifest" href="./manifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Willchair</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./serviceWorker.js').then((res) => {
+            console.log("Worker Registred with succes!");
+          }).catch((error) => {
+            console.log("Error in the service worker...")
+          }) 
+        })
+      }
+    </script>
   </body>
 </html>
