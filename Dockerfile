@@ -13,7 +13,7 @@ RUN npm install
 # Build the React application
 RUN npm run build
 
-# Expose port 3000
+# Expose port 4173
 EXPOSE 3000
 
 # Define the entry point for the container
