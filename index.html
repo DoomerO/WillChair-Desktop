@@ -14,11 +14,10 @@
   <script type="module" src="/src/main.tsx"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./serviceWorker.js').then((res) => {
+      navigator.serviceWorker.register('/serviceWorker.js').then((res) => {
         console.log("Worker Registred", res);
       }).catch((error) => {
-        console.log(error);
-        console.log("Error in the service worker...")
+        console.log("Error in the service worker...", error)
       })
     }
   </script>
