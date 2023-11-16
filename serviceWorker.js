@@ -1,6 +1,7 @@
 const urls = ['index.html', 'offline.html'];
 
-this.addEventListener('install', (event) => {
+self.addEventListener('install', (event) => {
+    console.log("SW Installed")
     event.waitUntil(
         caches.open("Cache").then((cache) => {
             console.log("Cache oppened");
@@ -9,7 +10,7 @@ this.addEventListener('install', (event) => {
     );
 });
 
-this.addEventListener('fetch', (e) => {
+self.addEventListener('fetch', (e) => {
     e.respondWith(
         caches.match(e.request).then((res) => {
             return fetch(e.request).catch(() => caches.match('offline.html'));
@@ -17,7 +18,7 @@ this.addEventListener('fetch', (e) => {
     );
 });
 
-this.addEventListener('activate', (e) => {
+self.addEventListener('activate', (e) => {
     const cacheWhiteList = [];
     cacheWhiteList.push("Cache");
     e.waitUntil(caches.keys().then((cacheNames) => Promise.all(
