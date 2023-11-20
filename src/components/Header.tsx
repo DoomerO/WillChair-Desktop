@@ -33,7 +33,7 @@ const Header = () => {
             if(res) {
                 toast("App instalado com sucesso!", "Obrigado por instalar nosso app!", 3000, "success");
             }
-            toast("O App não foi instalado", "Dê uma chance para nosso App! )-`:", 3000, "info");
+            else toast("O App não foi instalado", "Dê uma chance para nosso App! )-`:", 3000, "info");
         }).catch((error) => {
             console.log(error);
         });
